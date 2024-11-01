@@ -72,8 +72,6 @@ class Destroy:
       # Might exist the situation of [depot, depot]
       if len(route.locations) > 2:
         # From this route, choose a random location which is not the depot
-        for location in route.locations:
-          print(location.id)
         location = randomGen.choice([location for location in route.locations if location.id != 0])
         break
       else:

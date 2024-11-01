@@ -143,3 +143,12 @@ class Route:
           bestInsert = afterInsertion
           minCost = cost
     return bestInsert, minCost
+  
+  def print(self):
+    """
+    Method that prints the route
+    """
+    print("Route", end = '')
+    for loc in self.locations:
+      loc.print()
+    print(" dist=" + str(self.distance))

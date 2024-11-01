@@ -132,6 +132,7 @@ class Solution:
     return copy
   
   def executeRandomInsertion(self, randomGen):
+
     """
     Method that randomly inserts the unserved requests in the solution
     
@@ -175,3 +176,15 @@ class Solution:
       self.served.append(location)
       self.notServed.remove(location)
     # self.computeDistance()
+
+  def print(self):
+    """
+    Method that prints the solution
+    """
+    nRoutes = len(self.routes)
+    nNotServed = len(self.notServed)
+    print('total distcance ' + str(self.distance) + " Solution with " + str(nRoutes) + " routes and " + str(
+      nNotServed) + " unserved requests: ")
+    for route in self.routes:
+      route.print()
+    print("\n\n")

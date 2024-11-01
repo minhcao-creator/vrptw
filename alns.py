@@ -44,7 +44,7 @@ class ALNS:
     """
     Method that constructs an initial solution using random insertion
     """
-    self.currentSolution = Solution(self.problem, list(), list(), list(self.problem.locations.copy()))
+    self.currentSolution = Solution(self.problem, list(), list(), list(self.problem.locations.copy()[1:]))
     self.currentSolution.executeRandomInsertion(self.randomGen)
     self.currentSolution.computeDistance()
     self.bestSolution = self.currentSolution.copy()
@@ -53,7 +53,7 @@ class ALNS:
     # Print initial solution
             
     # print('-------initial solution-----')
-    # self.currentSolution.print()
+    self.currentSolution.print()
     # print("Created initial solution with distance: " + str(self.bestDistance))
     
     # Define max neighborhood size
@@ -98,6 +98,7 @@ class ALNS:
             
     # print(self.wDestroy)
     # print(self.wRepair)
+    self.currentSolution.print()
     endtime = time.time()  # get the end time
     cpuTime = round(endtime - starttime, 3)
      

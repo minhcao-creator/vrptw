@@ -1,14 +1,14 @@
 from vrptw import VRPTW
 from alns import ALNS
 
-test = "Instances/testc208.txt"
+test = "Instances/c209.txt"
 problem = VRPTW.readInstance(test)
 
 # Static parameters
-nDestroyOps = 9
+nDestroyOps = 6
 nRepairOps = 3
 minSizeNBH = 1
-nIterations = 3000
+nIterations = 2000000
 
 # Parameters to tune:
 maxPercentageNHB = 5
