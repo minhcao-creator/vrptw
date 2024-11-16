@@ -14,7 +14,7 @@ class Location:
   def getDistance(l1, l2):
     dx = l1.x - l2.x
     dy = l1.y - l2.y
-    return round(math.sqrt(dx ** 2 + dy ** 2))
+    return math.sqrt(dx ** 2 + dy ** 2)
   
   def print(self):
     """

@@ -1,14 +1,14 @@
 from vrptw import VRPTW
 from alns import ALNS
 
-test = "Instances/c209.txt"
+test = "Instances/post.json"
 problem = VRPTW.readInstance(test)
 
 # Static parameters
 nDestroyOps = 6
 nRepairOps = 3
 minSizeNBH = 1
-nIterations = 2000000
+nIterations = 20000
 
 # Parameters to tune:
 maxPercentageNHB = 5

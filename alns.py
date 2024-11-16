@@ -98,7 +98,7 @@ class ALNS:
             
     # print(self.wDestroy)
     # print(self.wRepair)
-    self.currentSolution.print()
+    # self.currentSolution.print()
     endtime = time.time()  # get the end time
     cpuTime = round(endtime - starttime, 3)
      
@@ -110,6 +110,8 @@ class ALNS:
     print(f'Best objective value found after: {round(time_best_objective, 3)} seconds')
      
     print(f'Best objective value found after: {self.optimal_iteration_number} iterations')
+
+    self.bestSolution.print()
      
     # print(self.repairUseTimes)
     # Plot weights of the operators over time 
