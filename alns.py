@@ -162,6 +162,8 @@ class ALNS:
       plt.xlabel('Iteration number', fontsize=12)
       plt.ylabel('Objective value', fontsize=12)
       plt.show()
+
+    return self.bestSolution.routes
     
   def checkIfAcceptNewSol(self):
     """

@@ -1,5 +1,4 @@
 import numpy as np
-import json
 from location import Location
 
 class VRPTW:
@@ -40,23 +39,23 @@ class VRPTW:
     capacity = int(capLine[10:20].strip())
     return VRPTW(fileName, locations, depot, capacity)
 
-  def readInstance(fileName):
+  def readInstance(data):
     locations = list()
     depot = None
     serviceStartTime = 0
-    with open(fileName, encoding="utf8") as file:
-      data = json.load(file)["data"]
+    # with open(fileName, encoding="utf8") as file:
+      # data = json.load(file)["data"]
     for d in data:
-      lid = int(d["locationCode"])
+      lid = int(d["id"])
       x = float(d["latitude"]*10)
-      y = float(d["longitude"]*10)
-      demand = int(d["demand"])
+      y = float(d["longtitude"]*10)
+      demand = int(d["capacity"])
       ready = 0
-      due = 1440
+      due = 360
       service = 15
       if (lid == 0):
         depot = Location(lid, x, y, demand, ready, due, service, serviceStartTime)
       location = Location(lid, x, y, demand, ready, due, service, serviceStartTime)
       locations.append(location)
     capacity = 100
-    return VRPTW(fileName, locations, depot, capacity)
+    return VRPTW('name', locations, depot, capacity)
